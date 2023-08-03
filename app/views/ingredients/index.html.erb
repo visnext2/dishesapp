@@ -1,0 +1,20 @@
+<h1 align="center">ingredients page</h1>
+
+<% @ingredient.each do |tmp|%>
+
+
+  <div class="container mt-5">
+    <div class="jumbotron p-4">
+      <h3 class="mb-4"><%= link_to tmp.name, ingredient_path(tmp) %></h3> 
+      <% if logged_in? %>
+      <%= link_to "edit", edit_ingredient_path(tmp) ,class: "btn btn-primary btn-lg"%>
+      <%else%>
+    <%end%>
+     
+    </div>
+    
+  </div>
+
+
+
+<%end%>

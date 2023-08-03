@@ -1,0 +1,10 @@
+<h1>show page</h1>
+
+<% if @ingredient.dishes.count!=0 %>
+  <%= render 'layouts/dishes', obj: @ingredient.dishes%>
+
+
+<%else%>
+<h1>no dish found that have this ingredient</h1>
+
+<%end%>

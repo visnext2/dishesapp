@@ -1,0 +1,48 @@
+<h1 align="center">create new dish</h1>
+<% if @dish.errors.any? %>
+
+  <h2>Errors:</h2>
+  <%= @dish.errors.full_messages %>
+<% end %>
+
+<%= form_with model: @dish do |f| %>
+<div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label :name %>
+        </div>
+        <div class="col-md-8">
+          <%= f.text_field :name, class: "form-control",  placeholder: "Name of recipe", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label :description %>
+        </div>
+        <div class="col-md-8">
+          <%= f.text_area :description, rows: 10, class: "form-control",  placeholder: "Enter steps to create recipe" %>
+        </div>
+      </div>
+      <div class="form-group">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |cb| %>
+<% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+          <%= f.submit %>
+        </div>
+      </div> 
+  </div>
+
+<%end%> 
+
+
+<div class= "link-text-color">
+<h1 align="center"> <%= link_to "Go to home Page", root_path%></h1>
+<h1 align="center"> <%= link_to "Go to dishes Page", dishes_path%></h1>
+</div>

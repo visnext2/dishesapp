@@ -1,0 +1,30 @@
+.navbar{
+  background-color: rgb(26, 104, 26);
+}
+
+h1 {
+  color: rgb(16, 19, 16);
+}
+
+.jumbotron
+{
+  background-color: rgb(196, 187, 187);
+  margin-top: 20px;
+}
+
+.navbar a.nav-link {
+  color: white;
+}
+
+.navbar a.nav-link.active {
+  color: white/* Replace #00ff00 with your desired color for the active link */
+}
+#brand{
+  font-weight: bold;
+  color: white;
+  font-size: 30px;
+  margin-right: 20px;
+}
+.link-text-color a{
+  color: green; /* Replace 'green' with your desired color */
+}
